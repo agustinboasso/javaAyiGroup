@@ -3,7 +3,7 @@
 # Descripción General
 GolosinasApp es una aplicación Java para la gestión de pedidos de golosinas. Permite a los usuarios crear, aprobar y administrar pedidos a través de una interfaz de consola. La aplicación controla el flujo de estados de los pedidos y ofrece funcionalidades para verificar las transiciones de estado legales antes de efectuarlas.
 
-# Diagrama de Clases
+# Diagrama de Clases:
 
 [![Diagrama-de-clases.jpg](https://i.postimg.cc/2jBYc84d/Diagrama-de-clases.jpg)](https://postimg.cc/14Pb4S74)
 
