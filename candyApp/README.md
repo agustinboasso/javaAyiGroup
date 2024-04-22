@@ -29,7 +29,7 @@ GolosinasApp es una aplicación Java para la gestión de pedidos de golosinas. P
 
 
 # Pruebas con Postman
-* Endpoint para Cambio de Estado:
+* Endpoint para validar la imposibilidad del Cambio de Estado:
     - URL: http://localhost:8000/cambioEstado
     - Método: POST
     - Body (ejemplo):
