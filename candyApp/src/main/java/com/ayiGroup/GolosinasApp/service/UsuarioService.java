@@ -3,10 +3,10 @@ package main.java.com.ayiGroup.GolosinasApp.service;
 import main.java.com.ayiGroup.GolosinasApp.model.Usuario;
 
 public class UsuarioService {
+    private int ultimoId = 0; 
 
-    public Usuario obtenerUsuarioPorId(int id) {
-        // En una aplicación real, aquí buscarías el usuario en la base de datos.
-        // Esta es solo una simulación.
-        return new Usuario(id, "NombreUsuario" + id);
+    public Usuario crearUsuario(String nombre) {
+        ultimoId++; 
+        return new Usuario(ultimoId, nombre);
     }
 }

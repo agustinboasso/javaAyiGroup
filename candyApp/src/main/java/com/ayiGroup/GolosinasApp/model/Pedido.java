@@ -8,6 +8,8 @@ public class Pedido {
     private EstadoPedido estado;
     private List<String> golosinas; 
     private Usuario solicitante;
+    @SuppressWarnings("unused")
+    private String tipo;
 
     public Pedido(int id, Usuario solicitante) {
         this.id = id;
@@ -25,6 +27,9 @@ public class Pedido {
         return golosinas.remove(golosina);
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     
     public int getId() {
         return id;

@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 import main.java.com.ayiGroup.GolosinasApp.model.EstadoPedido;
 import main.java.com.ayiGroup.GolosinasApp.service.PedidoService;
+import main.java.com.ayiGroup.GolosinasApp.model.ExceptionDetail;
+
+
 
 public class EstadoHandler implements HttpHandler {
     private PedidoService pedidoService;
@@ -28,21 +31,21 @@ public class EstadoHandler implements HttpHandler {
             if (pedidoService.cambiarEstadoPedido(pedidoId, nuevoEstado)) {
                 response = "Cambio de estado exitoso.";
             } else {
-                response = "Cambio de estado no permitido.";
-            } else {
-                throw new ProcessingException(ExceptionDetail.CodigoError.ESTADO_LIQUIDACION_INVALIDO);
-            }
-
+                
+                response = "No se puede cambiar el estado";
+                System.out.println(ExceptionDetail.CodigoError.CAMBIO_ESTADO_INVALIDO.getMessage());
+                //throw new RuntimeException(ExceptionDetail.CodigoError.CAMBIO_ESTADO_INVALIDO.getMessage());
+            } 
             exchange.sendResponseHeaders(200, response.length());
             OutputStream os = exchange.getResponseBody();
             os.write(response.getBytes());
             os.close();
-        } else {
+            } else {
             String response = "Método no soportado";
             exchange.sendResponseHeaders(405, response.length());
             OutputStream os = exchange.getResponseBody();
             os.write(response.getBytes());
             os.close();
-        }
+        } 
     }
-}
+} 
