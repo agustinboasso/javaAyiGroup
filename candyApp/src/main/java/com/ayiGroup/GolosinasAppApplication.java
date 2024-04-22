@@ -40,13 +40,13 @@ public class GolosinasAppApplication {
         var pedido = pedidoService.crearPedido(primerUsuario);
         System.out.println("Pedido creado con ID: " + pedido.getId() + " y estado inicial: " + pedido.getEstado().name());
 
-        System.out.println("¿Quieres pasar el pedido a pendiente de aprobación? (si/no)");
+        System.out.println("¿Quieres aprobar la solicitud del pedido? (si/no)");
         System.out.println(" ");
         String respuesta = scanner.nextLine().trim().toLowerCase();
         if ("si".equals(respuesta)) {
             if (pedidoService.cambiarEstadoPedido(pedido.getId(), EstadoPedido.PENDIENTE_APROBACION)) {
                 System.out.println("Pedido ahora en estado: " + pedido.getEstado().name());
-                System.out.println("Introduce el nombre del revisor (no puede ser " + primerNombre + "):");
+                System.out.println("Introduce el nombre del revisor:");
                 System.out.println(" ");
                 String segundoNombre;
                 while (true) {
